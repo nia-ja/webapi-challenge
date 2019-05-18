@@ -20,7 +20,18 @@ class Projects extends Component {
       return (
         <div className="projects-page wrapper">
             <Navigation />
-          Projects
+            {this.state.projects && (
+                <div className="projects-wrapper">
+                    {this.state.projects.map(project => {
+                        return (
+                            <div className="project-wrapper" key={project.id}>
+                                <h4>{project.name}</h4>
+                                <p>{project.description}</p>
+                            </div>
+                        )
+                    })}
+                </div>
+            )}
         </div>
       );
     }

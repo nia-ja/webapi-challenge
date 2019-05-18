@@ -20,7 +20,18 @@ class Actions extends Component {
       return (
         <div className="actions-page-wrapper">
             <Navigation />
-          Actions
+            {this.state.actions && (
+                <div className="actions-wrapper">
+                    {this.state.actions.map(action => {
+                        return (
+                            <div className="action-wrapper" key={action.id}>
+                                <h4>{action.description}</h4>
+                                <p>{action.notes}</p>
+                            </div>
+                        )
+                    })}
+                </div>
+            )}
         </div>
       );
     }
