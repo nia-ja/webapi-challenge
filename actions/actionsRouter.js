@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 });
 
 // POST endpoint for /api/actions. Takes the route and new action object -> returns newerly created object
-router.post('/', async (req, res) => {
+router.post('/', validateAction, async (req, res) => {
     try {
         const action = await Actions.insert(req.body);
         res.status(201).json(action);
@@ -44,7 +44,7 @@ router.delete('/:id', async (req, res) => {
       }
 });
 // PUT endpoint for /api/actions/:id. Takes the route and project's id -> returns eddited object
-router.put('/:id', async (req, res) => {
+router.put('/:id', validateAction, async (req, res) => {
     try {
         const action = await Actions.update(req.params.id, req.body);
         if (action) {
@@ -58,5 +58,18 @@ router.put('/:id', async (req, res) => {
         });
       }
 });
+
+// custom middleware
+function validateAction(req, res, next) {
+    if(req.body && Object.keys(req.body).length) {
+        if(req.body.project_id && req.body.description !== "" && req.body.notes !== "") {
+            next();
+        } else {
+            res.status(400).json({ message: "missing required field(s)" });
+        }
+    } else {
+        res.status(400).json({ message: "missing action data" });
+    }
+};
 
 module.exports = router;
