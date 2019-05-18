@@ -24,15 +24,30 @@ In this challenge, create a web API around the following resources: `Projects` a
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] Mention two parts of Express that you learned about this week.
+1. [ ] Mention two parts of Express that you learned about this week.
 
-- [ ] Describe Middleware?
+    This week we learned about middleware and routing
 
-- [ ] Describe a Resource?
+2. [ ] Describe Middleware?
 
-- [ ] What can the API return to help clients know if a request was successful?
+    In scope of this Sprint, middleware is basically a function that adds features to express. There are different types of middleware:
+        - build-in ( like .json() ) : comes included with express but not added to the app by default.
+        - third party ( like morgan, KORRES, helmet) : build by others devs and comes with npm modules
+        - custom: we can right our own functions for certain tasks. 
 
-- [ ] How can we partition our application into sub-applications?
+
+3. [ ] Describe a Resource?
+
+    Resource is the foundational unit in a RESTful API, it is any form of data that is used by our application (like users, products, clients, customers etc. - basically all this names of SQL tables).
+
+
+4. [ ] What can the API return to help clients know if a request was successful?
+
+    API can return everything ( ok, almost everything ) we want it too. But in general it returns a status 200 or 201 and some JSON ( it could be success message, id of created object, object or array of objects, counter ( how many entries were deleted for example ) etc. ).
+
+5. [ ] How can we partition our application into sub-applications?
+
+    We can use sub-routes for splitting our application. 
 
 ## Project Setup
 
