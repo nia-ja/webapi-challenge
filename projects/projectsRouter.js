@@ -16,6 +16,18 @@ router.get('/', async (req, res) => {
       }
 });
 
+// GET endpoint for /api/projects/:id/actions. Takes the route including id of the project -> returns an array of actions for this project or empty array if there's no actions for the project
+router.get('/:id/actions', async (req, res) => {
+    try {
+        const actions = await Projects.getProjectActions(req.params.id);
+        res.status(200).json(actions);
+      } catch (error) {
+        res.status(500).json({
+          message: 'Error retrieving the actions',
+        });
+      }
+});
+
 // POST endpoint for /api/projects. Takes the route and new project object -> returns newerly created object
 router.post('/', async (req, res) => {
     try {
@@ -44,20 +56,20 @@ router.delete('/:id', async (req, res) => {
       }
 });
 
-// PUT endpoint for /api/projects/:id. Takes the route and project's id -> returns 
-// router.put('/:id', async (req, res) => {
-//     try {
-//         const project = await Projects.update(req.params.id, req.body);
-//         if (project) {
-//           res.status(200).json({id: req.params.id, ...req.body});
-//         } else {
-//           res.status(404).json({ message: 'The project could not be found' });
-//         }
-//       } catch (error) {
-//         res.status(500).json({
-//           message: 'Error updating the project',
-//         });
-//       }
-// });
+// PUT endpoint for /api/projects/:id. Takes the route and project's id -> returns eddited object
+router.put('/:id', async (req, res) => {
+    try {
+        const project = await Projects.update(req.params.id, req.body);
+        if (project) {
+          res.status(200).json(project);
+        } else {
+          res.status(404).json({ message: 'The project could not be found' });
+        }
+      } catch (error) {
+        res.status(500).json({
+          message: 'Error updating the project',
+        });
+      }
+});
 
 module.exports = router;

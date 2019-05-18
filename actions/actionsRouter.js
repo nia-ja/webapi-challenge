@@ -43,5 +43,20 @@ router.delete('/:id', async (req, res) => {
         });
       }
 });
+// PUT endpoint for /api/actions/:id. Takes the route and project's id -> returns eddited object
+router.put('/:id', async (req, res) => {
+    try {
+        const action = await Actions.update(req.params.id, req.body);
+        if (action) {
+          res.status(200).json(action);
+        } else {
+          res.status(404).json({ message: 'The action could not be found' });
+        }
+      } catch (error) {
+        res.status(500).json({
+          message: 'Error updating the action',
+        });
+      }
+});
 
 module.exports = router;
