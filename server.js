@@ -1,9 +1,15 @@
 const express = require('express');
 
+const ProjectsRouter = require('./projects/projectsRouter.js');
+const ActionsRouter = require('./actions/actionsRouter.js');
+
 const server = express();
 
 server.use(express.json());
 server.use(logger);
+
+server.use('/api/projects', ProjectsRouter);
+server.use('/api/actions', ActionsRouter);
 
 server.get('/', (req, res) => {
   res.send(`<h2>Hi there!</h2>`)
