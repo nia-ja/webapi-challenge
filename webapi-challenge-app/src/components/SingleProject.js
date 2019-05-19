@@ -4,24 +4,14 @@ import Navigation from "./Navigation";
 
 class SingleProject extends Component {
     state = {
-      projects: [],
       actions: [],
       project: []
     }
   
     componentDidMount() {
         const id = Number(this.props.match.params.id);
-        console.log(id);
-        axios
-            .get("http://localhost:5001/api/projects")
-            .then(response => {
-                this.setState({ projects: response.data });
-            })
-            .then(() => {
-                const project = this.state.projects.filter(project => project.id === id);
-                this.setState({ project: project[0]});
-            })
-            .catch(err => console.log(err));
+        const project = this.props.projects.filter(project => project.id === id);
+        this.setState({ project: project[0]});
         axios
             .get(`http://localhost:5001/api/projects/${id}/actions`)
             .then(response => {
@@ -30,7 +20,6 @@ class SingleProject extends Component {
             .catch(err => console.log(err));
     }
     render() {
-        console.log(this.state.actions);
       return (
         <div className="single-project-page">
             <Navigation />
@@ -48,6 +37,7 @@ class SingleProject extends Component {
                                 </div>
                             )
                         })}
+                        {/* If there's no action for the particular project, inform user about it */}
                         {(this.state.actions.length === 0) && <p>There's no actions for this project</p>}
                     </div>
                 )}
