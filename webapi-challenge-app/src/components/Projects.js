@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from "axios";
 import Navigation from "./Navigation";
 
@@ -18,15 +19,15 @@ class Projects extends Component {
     }
     render() {
       return (
-        <div className="projects-page wrapper">
+        <div className="projects-page-wrapper">
             <Navigation />
             {this.state.projects && (
                 <div className="projects-wrapper">
                     {this.state.projects.map(project => {
                         return (
                             <div className="project-wrapper" key={project.id}>
-                                <h4>{project.name}</h4>
-                                <p>{project.description}</p>
+                                <Link to={`/projects/${project.id}`}><h4>{project.name}</h4></Link>
+                                {/* <p>{project.description}</p> */}
                             </div>
                         )
                     })}
