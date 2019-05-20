@@ -1,0 +1,30 @@
+.actions-page-wrapper {
+    width: 100%;
+}
+.actions-page-wrapper .navigation-wrapper {
+    margin-bottom: 30px;
+}
+.actions-wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+.action-wrapper {
+    background: rgba(254, 231, 247, .2);
+    padding: 30px;
+    margin-bottom: 30px;
+    /* transition: all .2s ease-in-out; */
+}
+/* .action-wrapper:hover {
+    color: #F717B0;
+    background: #350F6E;
+    transform: scale(1.1);
+} */
+.action-wrapper h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.action-wrapper span {
+    font-weight: bold;
+}

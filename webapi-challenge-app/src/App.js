@@ -26,7 +26,6 @@ class App extends Component {
         <Route exact path="/" component={Home} />
         <Route exact path="/projects" render={(props) => <Projects {...props} projects={this.state.projects} />} />
         <Route path="/projects/:id" render={(props) => <SingleProject {...props} projects={this.state.projects} />} />
-        {/* <Route path="/projects/:id" component={SingleProject} /> */}
         <Route path="/actions" component={Actions} />
       </div>
     );

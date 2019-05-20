@@ -1,0 +1,30 @@
+.single-project-page {
+    width: 100%;
+}
+.single-project-page .navigation-wrapper {
+    margin-bottom: 60px;
+}
+.single-project-wrapper {
+    width: 60%;
+    margin: 0 auto;
+    background: rgba(254, 231, 247, .2);
+    padding: 30px;
+}
+.single-project-wrapper h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+.single-project-wrapper span {
+    font-weight: bold;
+}
+.single-project-wrapper p {
+    margin-bottom: 15px;
+}
+.action {
+    display: flex;
+}
+.action p:nth-child(1) {
+    margin-right: 10px;
+}

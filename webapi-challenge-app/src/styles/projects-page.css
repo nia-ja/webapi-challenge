@@ -1,0 +1,32 @@
+.projects-page-wrapper {
+    width: 100%;
+}
+.projects-page-wrapper .navigation-wrapper {
+    margin-bottom: 30px;
+}
+.projects-wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+.projects-wrapper .project-wrapper {
+    width: 100%;
+    margin-bottom: 15px;
+    /* margin-bottom: 20px; */
+}
+.projects-wrapper .project-wrapper a {
+    text-decoration: none;
+}
+.projects-wrapper .project-wrapper a h4 {
+    padding: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background: rgba(254, 231, 247, .2);
+    color: #080310;
+    text-align: center;
+    transition: all .2s ease-in-out;
+}
+.projects-wrapper .project-wrapper a h4:hover {
+    color: #F717B0;
+    background: #350F6E;
+    transform: scale(1.1);
+}

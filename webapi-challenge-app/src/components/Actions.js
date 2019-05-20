@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import axios from "axios";
 
+import "../styles/actions.css";
+
 import Navigation from "./Navigation";
 
 class Actions extends Component {
     state = {
       actions: []
     }
-  
     componentDidMount() {
       axios
         .get("http://localhost:5001/api/actions")
@@ -26,7 +27,7 @@ class Actions extends Component {
                         return (
                             <div className="action-wrapper" key={action.id}>
                                 <h4>{action.description}</h4>
-                                <p>{action.notes}</p>
+                                <p><span>Notes:</span> {action.notes}</p>
                             </div>
                         )
                     })}
@@ -35,6 +36,6 @@ class Actions extends Component {
         </div>
       );
     }
-  }
+}
   
-  export default Actions;
+export default Actions;
