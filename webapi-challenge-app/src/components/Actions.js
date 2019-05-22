@@ -11,7 +11,7 @@ class Actions extends Component {
     }
     componentDidMount() {
       axios
-        .get("http://localhost:5001/api/actions")
+        .get("https://webapi-sprint-challenge.herokuapp.com/api/actions")
         .then(response => {
           this.setState({ actions: response.data });
         })
@@ -27,7 +27,8 @@ class Actions extends Component {
                         return (
                             <div className="action-wrapper" key={action.id}>
                                 <h4>{action.description}</h4>
-                                <p><span>Notes:</span> {action.notes}</p>
+                                { action.notes && (<p><span>Notes:</span> {action.notes}</p>) }
+                                { !action.notes && (<p>No notes for this action</p>)}
                             </div>
                         )
                     })}

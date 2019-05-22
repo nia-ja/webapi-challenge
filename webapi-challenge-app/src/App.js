@@ -14,7 +14,7 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:5001/api/projects")
+      .get("https://webapi-sprint-challenge.herokuapp.com/api/projects")
       .then(response => {
         this.setState({ projects: response.data });
       })

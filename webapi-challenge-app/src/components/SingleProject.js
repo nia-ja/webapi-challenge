@@ -15,7 +15,7 @@ class SingleProject extends Component {
         const project = this.props.projects.filter(project => project.id === id);
         this.setState({ project: project[0]});
         axios
-            .get(`http://localhost:5001/api/projects/${id}/actions`)
+            .get(`https://webapi-sprint-challenge.herokuapp.com/api/projects/${id}/actions`)
             .then(response => {
                 this.setState({ actions: response.data });
             })

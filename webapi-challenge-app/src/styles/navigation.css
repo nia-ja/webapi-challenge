@@ -6,6 +6,7 @@
     background: #350F6E;
 }
 .navigation-wrapper a {
+    font-family: 'Cabin Sketch', cursive;
     margin-right: 3%;
     color: #FEE7F7;
     font-weight: bold;
