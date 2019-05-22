@@ -1,0 +1,42 @@
+.home-page-wrapper {
+    width: 100%;
+}
+.home-page-wrapper .navigation-wrapper {
+    margin-bottom: 45px;
+}
+
+.home-content {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.home-content img {
+    width: 40%;
+    margin: 0 5%;
+}
+.home-content .home-text {
+    width: 40%;
+    margin: 0 5%;
+}
+.home-content h1 {
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.home-content p {
+    text-align: justify;
+    background: rgba(254, 231, 247, .2);
+    padding: 15px;
+    line-height: 1.4em;
+    word-spacing: 0.1em;
+    font-size: 18px;
+}
+.home-content p:nth-child(even) {
+    margin-left: 20%;
+    margin-bottom: 30px;
+}
+.home-content p:nth-child(odd) {
+    margin-right: 20%;
+}

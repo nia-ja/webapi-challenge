@@ -1,0 +1,26 @@
+.actions-page-wrapper {
+    width: 100%;
+}
+.actions-page-wrapper .navigation-wrapper {
+    margin-bottom: 30px;
+}
+.actions-wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+.action-wrapper {
+    background: rgba(254, 231, 247, .2);
+    padding: 30px;
+    margin-bottom: 15px;
+}
+.action-wrapper h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: #3C117E;
+}
+.action-wrapper span {
+    font-weight: bold;
+    text-transform: uppercase;
+}

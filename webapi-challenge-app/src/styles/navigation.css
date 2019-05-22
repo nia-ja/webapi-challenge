@@ -1,0 +1,30 @@
+.navigation-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0;
+    background: #350F6E;
+}
+.navigation-wrapper a {
+    font-family: 'Cabin Sketch', cursive;
+    margin-right: 3%;
+    color: #FEE7F7;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 7px;
+    border: 1px solid transparent;
+}
+.navigation-wrapper a:hover {
+    color: #FCA2DF;
+}
+
+.navigation-wrapper .active-link {
+    color: #F717B0;
+    border: 1px solid #F717B0;
+    border-radius: 3px;
+    background: #3C117E;
+}
+.navigation-wrapper .active-link:hover {
+    border: 1px solid #FCA2DF;
+}
