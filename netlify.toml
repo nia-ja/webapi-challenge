@@ -1,0 +1,4 @@
+[build]
+base = "webapi-challenge-app/"
+publish = "webapi-challenge-app/build/"
+command = "yarn build"
